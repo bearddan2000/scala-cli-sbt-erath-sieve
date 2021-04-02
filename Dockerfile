@@ -30,8 +30,8 @@ WORKDIR /tmp
 
 COPY bin/ .
 
-RUN sbt run \
-  && sbt package \
-  && chmod -R +x target/scala-2.13
+ENTRYPOINT ["sbt"]
 
-CMD ["/usr/bin/scala", "/tmp/target/scala-2.13/user-svc_2.13-0.0.1-SNAPSHOT.jar"]
+CMD ["run"]
+
+# CMD ["/usr/bin/scala", "/tmp/target/scala-2.13/user-svc_2.13-0.0.1-SNAPSHOT.jar"]
